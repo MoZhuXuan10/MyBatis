@@ -2,8 +2,10 @@ package com.syl;
 
 import com.syl.bean.Student;
 import com.syl.dao.StudentDao;
-import com.syl.dao.StudentDaoImpl;
+import com.syl.util.SessionFactoryUtil;
+import org.apache.ibatis.session.SqlSession;
 import org.apache.log4j.Logger;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,6 +16,7 @@ import java.util.Map;
 public class MyBatisTest {
 
     StudentDao dao=null;
+    SqlSession session=null;
     Logger log=Logger.getLogger(MyBatisTest.class);
 
     /**
@@ -21,7 +24,15 @@ public class MyBatisTest {
      */
     @Before
     public void before(){
-        dao=new StudentDaoImpl();
+        //获取session
+        session= SessionFactoryUtil.getSession();
+        dao=session.getMapper(StudentDao.class);//获取执行的类对象
+    }
+    @After
+    public void after(){
+        if(session!=null){
+            session.close();
+        }
     }
 
     /**
@@ -30,16 +41,17 @@ public class MyBatisTest {
 
     @Test
     public   void  testAddStudent(){
-        Student student=new Student(3,"嘿嘿");
-        log.debug("insert之前学生的编号："+student.getId());
+        Student student=new Student(2,"春天");
+        //log.debug("insert之前学生的编号："+student.getId());
         dao.addStudent(student);
+        session.commit();
         /**
          * 我们现在的新增对象中 只有age和name
          * id是mysql数据库给我们生成的
          * 你没有去mysql数据库中查询！
          * id肯定沒值！
          */
-        log.debug("insert之后学生的编号："+student.getId());
+        //log.debug("insert之后学生的编号："+student.getId());
     }
 /**
  * 我们需要新增对象之后，接着对这个对象进行操作
@@ -52,25 +64,29 @@ public class MyBatisTest {
  */
 @Test
     public void addStudentByCache(){
-    Student student=new Student(3,"嘿嘿");
+    Student student=new Student(11,"呼啦");
     log.debug("insert之前学生的编号:"+student.getId());
     dao.addStudentByCache(student);
     log.debug("insert之后学生的编号:"+student.getId());
+    session.commit();
 }
 /**
  * 删除
  */
 @Test
     public void delStudent(){
-       dao.deleteStudent(5);
+       dao.deleteStudent(10);
+       session.commit();
 }
 /**
  * 修改
  */
 @Test
     public void updateStudent(){
-       Student student=new Student(7,5,"夏天");
+       Student student=new Student(3,1,"呼啦");
        dao.updateStudent(student);
+       log.debug("修改之后的学生信息:"+student);
+       session.commit();
 }
 /**
  * 查询所有 返回list
@@ -85,9 +101,8 @@ public class MyBatisTest {
  */
 @Test
     public void mapStudent(){
-    Map<String,Object> students=dao.selectAllByMap();
-    log.debug(students.size());
-    log.debug(students.get("嘿嘿"));
+    List<Map<String,Object>> maps = dao.selectAllByMap();
+    log.debug(maps);
 }
 /**
  * 根据id查询Student,返回Student对象
@@ -103,7 +118,7 @@ public class MyBatisTest {
  */
 @Test
     public void selectStudentByName(){
-    List<Student> students = dao.selectByName("嘿");
+    List<Student> students = dao.selectByName("呼");
     //获取一个对象
     log.debug(students);
 }

@@ -30,7 +30,7 @@ public interface StudentDao {
     /**
      * 查询所有,返回map集合
      */
-    Map<String,Object> selectAllByMap();
+    List<Map<String, Object>> selectAllByMap();
     /**
      * 查询指定id的学生
      */
