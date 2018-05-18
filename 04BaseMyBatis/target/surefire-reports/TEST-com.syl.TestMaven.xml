@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.syl.TestMaven" time="0.059" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="user.variant" value=""/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="file.encoding" value="GBK"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="user.dir" value="E:\BaseMyBatis\01BaseMyBatis"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.home" value="C:\Program Files (x86)\Java\jdk1.7.0_75\jre"/>
+    <property name="user.name" value="Administrator"/>
+    <property name="sun.boot.library.path" value="C:\Program Files (x86)\Java\jdk1.7.0_75\jre\bin"/>
+    <property name="user.home" value="C:\Users\Administrator"/>
+    <property name="localRepository" value="C:\Users\Administrator\.m2\repository"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="user.language" value="zh"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.io.tmpdir" value="C:\Users\ADMINI~1\AppData\Local\Temp\"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.class.path" value="E:\BaseMyBatis\01BaseMyBatis\target\test-classes;E:\BaseMyBatis\01BaseMyBatis\target\classes;C:\Users\Administrator\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Administrator\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="user.script" value=""/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="sun.java.command" value="C:\Users\ADMINI~1\AppData\Local\Temp\surefire7861965376429568038\surefirebooter1442999377087542413.jar C:\Users\Administrator\AppData\Local\Temp\surefire7861965376429568038 2018-05-15T14-54-17_870-jvmRun1 surefire1046266727640009670tmp surefire_02569332671478331052tmp"/>
+    <property name="user.timezone" value=""/>
+    <property name="surefire.test.class.path" value="E:\BaseMyBatis\01BaseMyBatis\target\test-classes;E:\BaseMyBatis\01BaseMyBatis\target\classes;C:\Users\Administrator\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\Administrator\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.6\mysql-connector-java-5.1.6.jar;"/>
+    <property name="java.runtime.version" value="1.7.0_75-b13"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
+    <property name="sun.arch.data.model" value="32"/>
+    <property name="os.arch" value="x86"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="sun.boot.class.path" value="C:\Program Files (x86)\Java\jdk1.7.0_75\jre\lib\resources.jar;C:\Program Files (x86)\Java\jdk1.7.0_75\jre\lib\rt.jar;C:\Program Files (x86)\Java\jdk1.7.0_75\jre\lib\sunrsasign.jar;C:\Program Files (x86)\Java\jdk1.7.0_75\jre\lib\jsse.jar;C:\Program Files (x86)\Java\jdk1.7.0_75\jre\lib\jce.jar;C:\Program Files (x86)\Java\jdk1.7.0_75\jre\lib\charsets.jar;C:\Program Files (x86)\Java\jdk1.7.0_75\jre\lib\jfr.jar;C:\Program Files (x86)\Java\jdk1.7.0_75\jre\classes"/>
+    <property name="surefire.real.class.path" value="C:\Users\ADMINI~1\AppData\Local\Temp\surefire7861965376429568038\surefirebooter1442999377087542413.jar"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files (x86)\Java\jdk1.7.0_75\jre\lib\endorsed"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="idea.version" value="2017.2.2"/>
+    <property name="java.vm.version" value="24.75-b04"/>
+    <property name="os.name" value="Windows 8.1"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
+    <property name="java.version" value="1.7.0_75"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.ext.dirs" value="C:\Program Files (x86)\Java\jdk1.7.0_75\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="os.version" value="6.3"/>
+    <property name="basedir" value="E:\BaseMyBatis\01BaseMyBatis"/>
+    <property name="java.library.path" value="C:\Program Files (x86)\Java\jdk1.7.0_75\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Java\jdk1.7.0_75\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\Mysql\mysql-5.6.24-win32\bin;E:\tomcat_2\bin;E:\tomcat_2\lib;E:\tomcat_2\bin;C:\Program Files (x86)\Java\jdk1.7.0_75\bin;C:\Program Files (x86)\Java\jdk1.7.0_75\jre\bin;C:\Program Files (x86)\Java\jdk1.7.0_75\lib\dt.jar;C:\Program Files (x86)\Java\jdk1.7.0_75\lib\tools.jar;D:\apache-maven-3.3.3\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;."/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM"/>
+    <property name="user.country" value="CN"/>
+  </properties>
+  <testcase name="test01" classname="com.syl.TestMaven" time="0.004"/>
+</testsuite>
