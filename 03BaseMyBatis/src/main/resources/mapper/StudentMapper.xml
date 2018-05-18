@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.syl.dao.StudentDao">
+   <insert id="addStudent" parameterType="Student">
+       INSERT  INTO  student(age,name)  VALUES (#{age},#{name})
+   </insert>
+    <insert id="addStudentByCache" parameterType="Student">
+        INSERT  INTO  student(age,name)  VALUES (#{age},#{name})
+        <selectKey resultType="int" keyProperty="id" order="AFTER">
+            SELECT @@IDENTITY
+        </selectKey>
+    </insert>
+    <delete id="deleteStudent" parameterType="int">
+        DELETE FROM student WHERE  id=#{xxx}
+    </delete>
+    <!--修改操作  传递的是一个student对象-->
+    <update id="updateStudent" parameterType="Student">
+        UPDATE  student SET name=#{name},age=#{age} WHERE id=#{id}
+    </update>
+    <!--查询所有的student-->
+    <select id="selectAllStudents" resultType="Student">
+        SELECT id,age,name FROM student
+    </select>
+    <!--查询所有的student  返回值是map
+      如果我们写的是resultType="map"
+      那么mybatis在底层会把我们的每个字段当成key
+      字段对象的值 是value！  这样不可行！
+      我们是想把某一个字段当成key!
+      整行数据（对象）当成value！
+      这时候就需要把resultType换成resultMap(结果映射)="映射的resultMap名称"
+      mybatis底层会进行拦截ResultSet!
+      然后根据我们在resultMap中的配置，
+      把对应的key和value封装到map集合中！
+    -->
+    <select id="selectAllByMap" resultMap="studentMap">
+        SELECT id,age,name FROM student
+    </select>
+    <!--
+      01.数据库字段名和我们实体类属性名不一致   必须使用
+      02.返回结果是map集合时  必须使用
+      03.关联映射 以及延迟加载   必须使用
+    -->
+    <resultMap id="studentMap" type="Student">
+        <id property="id" column="id"/><!--只针对于主键的设置-->
+        <result property="age" column="age"/><!--设置除了主键，集合，对象之外的属性-->
+        <result property="name" column="name"/>
+    </resultMap>
+    <!--根据指定的id查询对象-->
+    <select id="selectStudentById" parameterType="int" resultType="Student">
+        select id,name,age from student where id=#{xxx}
+    </select>
+    <!--根据学生name模糊查询
+     SELECT id,name,age FROM student WHERE name LIKE '%' #{xxx} '%'-->
+    <select id="selectByName" resultType="Student">
+       SELECT id,name,age FROM student  where name like concat('%',#{xxx},'%')
+    </select>
+    <!--我们在前台表单中  有 三个输入框！
+      用户输入了几个？？？我们不知道
+      #{stuName}#{stuAge}
+      必须是map集合中的key-->
+    <select id="selectStduentsByMap" resultType="Student">
+        select id,name,age from student
+        where name like  concat('%',#{stuName},'%')
+        and  age>#{stuAge}
+        AND  id>#{student.id}
+    </select>
+
+    <!--按照参数的下标进行封装   下标从0开始-->
+    <select id="selectStduentsByCondition" resultType="Student">
+        select id,name,age from student
+        where name like  concat('%',#{0},'%')
+        and  age>#{1}
+    </select>
+
+</mapper>
